@@ -4,7 +4,7 @@
    */
   /*
     Plugin Name: ADF Chat-Dokumentation
-    Plugin URI: 
+    Plugin URI: https://github.com/lislis/adf-cd-plugin
     Description: Custom plugin that enabled a shortcode for embedding chat documentation tool.
     Author: lislis
     Version: 0.0.1
