@@ -11,13 +11,28 @@
     Author URI: https://lislis.de
   */
 
-
-// Hook the 'wp_footer' action hook, add the function named 'mfp_Add_Text' to it
-add_action("wp_footer", "adf_cd_add_script");
+add_action('admin_menu', 'adf_cd_plugin_setup_menu');
  
-function adf_cd_add_script() {
-  echo "";
+function adf_cd_plugin_setup_menu(){
+  add_menu_page( 'ADF-CD Plugin', 'ADF-CD', 'manage_options', 'adf-cd', 'test_init' );
 }
+ 
+function test_init(){
+  echo "<h1>ADF CD Plugin!</h1>";
+  echo "<h2>Shortcode Verwendung</h2>";
+  echo "<p>api_url zeigt auf den API server. container_class ist optional aber vielleicht für das Styling hilfreich.</p>";
+  echo "<pre>[adf_cd api_url=\"http://localhost:3000/api\" container_class=\"fooobarbaz\"]</pre>";
+  echo "<h2>Beispiel Styling</h2>";
+  echo "<p>Der Container könnte zB so gestylt werden, um fullscreen zu sein.</p>";
+  echo "<pre>#adf-cd { 
+    overflow-x: hidden; 
+    height: 100vh; 
+    width: 100vw; 
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+}</pre>";
+    }
 
 function adf_cd_shortcode_function($atts = array()) {
   wp_enqueue_style( 'adf-vue-styles', plugin_dir_url(__FILE__) . 'dist/css/app.css', array(), '0.0.2', 'screen');
