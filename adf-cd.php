@@ -43,6 +43,11 @@ function adf_cd_shortcode_function($atts = array()) {
   wp_register_script('adf-vue-app', plugin_dir_url(__FILE__) . 'dist/js/app.js', array('adf-vue-chunk'), '0.0.2', true);
   wp_enqueue_script('adf-vue-app');
 
+  $theme_overwrite_css = get_stylesheet_directory() . '/chat-styles.css';
+  if (is_file($theme_overwrite_css)) {
+    wp_enqueue_style( 'adf-chat-styles-overwrite', $theme_overwrite_css, array(), '0.0.1', 'screen');
+  }
+
   extract(shortcode_atts(array(
                                'api_url' => 'http://urlnot.set',
                                'container_class' => 'adf-cd-container'
