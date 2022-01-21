@@ -1,0 +1,62 @@
+#adf-cd {
+    margin-left: 0;
+    padding: 1em;
+    box-shadow: 0 0 6px 0 #171717 inset;
+}
+
+#adf-cd h1, #adf-cd h2 {
+    display: block;
+}
+
+#adf-cd h2.small-title {
+    margin: 1em 0;
+    padding: 0;
+}
+
+#adf-cd header.header {
+    display: none;
+}
+
+#adf-cd .chat-header {
+    position: relative;
+    top: -1em;
+    left: -1em;
+    width: calc(100% + 2em);
+    margin: 0;
+}
+
+#adf-cd .chat-header h1 {
+    font-weight: bold;
+}
+
+#adf-cd .chat-header p.fw-normal {
+    padding: 0;
+}
+
+#adf-cd .groupstart {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: 3em;
+}
+
+#adf-cd p {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+}
+
+#adf-cd .small-title {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: var(--padding);
+}
+
+#adf-cd p.small.date {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+}
+
