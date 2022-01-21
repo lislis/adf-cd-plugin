@@ -7,7 +7,7 @@
     Plugin URI: https://github.com/lislis/adf-cd-plugin
     Description: Custom plugin that enabled a shortcode for embedding chat documentation tool.
     Author: lislis
-    Version: 0.0.1
+    Version: 0.1.0
     Author URI: https://lislis.de
   */
 
@@ -35,17 +35,17 @@ function test_init(){
     }
 
 function adf_cd_shortcode_function($atts = array()) {
-  wp_enqueue_style( 'adf-vue-styles', plugin_dir_url(__FILE__) . 'dist/css/app.css', array(), '0.0.2', 'screen');
+  wp_enqueue_style( 'adf-vue-styles', plugin_dir_url(__FILE__) . 'dist/css/app.css', array(), '0.0.3', 'screen');
 
-  wp_register_script('adf-vue-chunk', plugin_dir_url(__FILE__) . 'dist/js/chunk-vendors.js', array(), '0.0.2', true);
+  wp_register_script('adf-vue-chunk', plugin_dir_url(__FILE__) . 'dist/js/chunk-vendors.js', array(), '0.0.3', true);
   wp_enqueue_script('adf-vue-chunk');
 
-  wp_register_script('adf-vue-app', plugin_dir_url(__FILE__) . 'dist/js/app.js', array('adf-vue-chunk'), '0.0.2', true);
+  wp_register_script('adf-vue-app', plugin_dir_url(__FILE__) . 'dist/js/app.js', array('adf-vue-chunk'), '0.0.3', true);
   wp_enqueue_script('adf-vue-app');
 
   $theme_overwrite_css = get_stylesheet_directory() . '/chat-styles.css';
   if (is_file($theme_overwrite_css)) {
-    wp_enqueue_style( 'adf-chat-styles-overwrite', $theme_overwrite_css, array(), '0.0.1', 'screen');
+    wp_enqueue_style( 'adf-chat-styles-overwrite', $theme_overwrite_css, array(), '0.0.3', 'screen');
   }
 
   extract(shortcode_atts(array(
